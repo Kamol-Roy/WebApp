@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{blog.title}}{% endblock %}
+
+{% load static %}
+{% block content %}
+<section class="bg-primary" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white">{{blog.title}}</h2>
+          <h3>By: {{ blog.author}}</h3>>
+          <hr class="light my-4">
+          <img src="{{blog.image}}" width="500" height="300" />
+          <hr>
+          <p>{{blog.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>   
+
+
+  {% endblock %}

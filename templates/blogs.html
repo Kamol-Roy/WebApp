@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block title %}Blogs{% endblock %}
+
+{% load static %}
+
+<html>
+<head>
+<style>
+body {
+        color: red;
+}
+h1 {
+        color: #00FF00;
+}
+p {
+        color: rgb(0,0,255)
+}
+</style>
+</head>
+<body>
+
+{% block content %}
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading text-white">Blogs</h2>
+                    <hr class="light">
+
+
+                    {% for blog in blogs %}
+                    <a href="/blog/{{ blog.id }}/" >
+                        <div>
+                            <p>{{ blog.title}}</p>
+                            <img src ="{{ blog.image }}" width=150 />
+                            
+                        </div>
+    
+                    </a>
+    
+                {% endfor %}
+
+
+            
+                </div>
+            </div>
+        </div>
+        </section>   
+
+
+  {% endblock %}
